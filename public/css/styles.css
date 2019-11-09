@@ -16,11 +16,11 @@ body {
 
 footer{
     /* background: rgb(154, 154, 245); */
-    
+    font-style: italic;
     margin-top: 15px;
     padding: 16px 0;
     color: #888888;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid #d0cdcd;
 }
 
 header{
