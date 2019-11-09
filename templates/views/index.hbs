@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather-App</title>
+    <link rel="icon" href="/img/weather.png">
+    <script src="https://kit.fontawesome.com/6750e6040b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+<body>
+    <div class="content">
+        {{>header}}                            <!--this is hbs syntax-->
+        <p>Use this site to get your weather!</p>
+         <form>
+            <input type="text" placeholder="Search location" >
+            <button>Search</button>
+        </form>
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+    </div>
+    
+    {{>footer}}
+
+</body>
+
+    <script type="text/javascript" src="/js/app.js"></script>
+</head>
+
+</html>
