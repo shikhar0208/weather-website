@@ -1,4 +1,7 @@
 body {
+    background: url(https://images.unsplash.com/photo-1552453717-a64093339e6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80);
+    background-size: cover;
+    background-position: center; 
     color: #333333;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -16,11 +19,13 @@ body {
 
 footer{
     /* background: rgb(154, 154, 245); */
+    font-weight: 550;
     font-style: italic;
     margin-top: 15px;
     padding: 16px 0;
-    color: #888888;
-    border-top: 1px solid #d0cdcd;
+    color: #2e2e2e;
+    border-top: 1px solid #8f8d8d;
+    text-align: right;
 }
 
 header{
@@ -33,7 +38,7 @@ h1{
 }
 
 header a{
-    color: #888888;
+    color: #6e6868;
     margin-right: 16px;
     text-decoration: none;
 }
@@ -43,7 +48,7 @@ header a{
 }
 
 .search_bar{
-    border: 2px solid #cccccc;
+    border: 2px solid #a8a7a7;
     padding-left: 8px;
     padding-top: 5px;
     padding-bottom: 8px;
@@ -64,8 +69,13 @@ input{
 
 }
 
+.search_input{
+    background-color: transparent;
+}
+
 input:focus{
     outline: none;
+    
 }
 
 button{
@@ -78,7 +88,7 @@ button{
 }
 
 .link{
-    color: #757272;
+    color: #686565;
     text-decoration: none;
     text-transform: capitalize;
 }
