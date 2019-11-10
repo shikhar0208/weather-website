@@ -38,7 +38,7 @@ h1{
 }
 
 header a{
-    color: #6e6868;
+    color: #6d6969;
     margin-right: 16px;
     text-decoration: none;
 }
@@ -95,4 +95,20 @@ button{
 
 .link:hover{
     text-decoration: underline;
+}
+
+#message-1{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+#forecast{
+    /* font-style: italic; */
+    color: #242323
+}
+
+.qoute{
+    font-weight: 500;
+    color: #0e0c0c;
 }
