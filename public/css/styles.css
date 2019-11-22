@@ -1,7 +1,9 @@
 body {
     background: url(https://images.unsplash.com/photo-1552453717-a64093339e6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80);
     background-size: cover;
-    background-position: center; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed; 
     color: #333333;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -105,10 +107,17 @@ button{
 
 #forecast{
     /* font-style: italic; */
-    color: #242323
+    color: #242323;
 }
 
 .qoute{
     font-weight: 500;
     color: #0e0c0c;
+}
+
+
+@media screen and (max-width: 959px) {
+    .content{
+        width: 100%;
+    }
 }
