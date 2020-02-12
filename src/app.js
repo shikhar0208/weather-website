@@ -1,5 +1,6 @@
 const path = require('path')
 const express = require('express')
+const bodyParser = require('body-parser')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
@@ -20,7 +21,7 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(address))  // it takes address as an argument
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
  // app.get function take 2 arg i.e.- 1. route/url and 2nd is a function which decide what to do when this particular route is visited 
 
