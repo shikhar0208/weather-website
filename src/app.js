@@ -6,7 +6,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
-
+app.use(bodyParser.urlencoded({ extended: true }));
 const port = process.env.PORT || 3000
 
 // Defines paths for Express config
@@ -21,7 +21,7 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(address))  // it takes address as an argument
-app.use(bodyParser.urlencoded({ extended: true }));
+
 
  // app.get function take 2 arg i.e.- 1. route/url and 2nd is a function which decide what to do when this particular route is visited 
 
@@ -48,12 +48,35 @@ app.get('/help', (req,res)=>{
 })
 
  app.get('/weather',(req,res) =>{
-    if(!req.query.address){
+    if(!((req.query.address)||((req.query.lat)&&(req.query.long)))){
         return(res.send({
             error: 'Address must be required!!'
         }))
     }
+    
+    if(req.query.lat && req.query.long){
+        const latitude = req.query.lat
+        const longitude = req.query.long
+        geocode(`${longitude},${latitude}`,(error, {location} = {}) => {
+            if(error){
+                return(res.send({
+                    error
+                }))
+            }
+            forecast(latitude, longitude, (error, forecastData) => {
+                if(error){
+                    return res.send({error})
+                } else {
+                    return (res.send({
+                        forecast: forecastData,
+                        location
+                    }))
+                }
+            })
+        })    
+    }
 
+    else if(req.query.address){
         geocode(req.query.address,(error,{latitude,longitude,location} = {})=>{
             if(error){
                 return(res.send({
@@ -71,6 +94,8 @@ app.get('/help', (req,res)=>{
                 })
               })
         })
+    }
+       
 
 })
 

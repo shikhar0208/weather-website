@@ -118,6 +118,14 @@ button{
     float: right;
 }
 
+#search-input-location{
+    display: inline-block;
+}
+
+#currentLocation{
+    display: inline-block;
+}
+
 
 @media screen and (max-width: 959px) {
     .content{
